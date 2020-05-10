@@ -7,13 +7,35 @@ import { SigningComponent } from './signing/signing.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsersboardComponent } from './usersboard.component';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from '../material/material.module';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, HomeComponent, SigningComponent, ProductsComponent, CartComponent, ProfileComponent],
+  declarations: [
+    NavbarComponent, 
+    FooterComponent, 
+    HomeComponent, 
+    SigningComponent, 
+    ProductsComponent, 
+    CartComponent, 
+    ProfileComponent, UsersboardComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MaterialModule
+  ],
+  exports: [
+    NavbarComponent, 
+    FooterComponent, 
+    HomeComponent, 
+    SigningComponent, 
+    ProductsComponent, 
+    CartComponent, 
+    ProfileComponent
   ]
 })
 export class UsersboardModule { }

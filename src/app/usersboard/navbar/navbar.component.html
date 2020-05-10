@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+
+<mat-toolbar style="justify-content: space-between;">
+    <div class="logo">
+        <span style="background-image: url('./assets/logo1.png');display: block;width: 150px; height: 50px; background-position: center;background-size: cover;"></span>
+    </div>
+    <div class="menu">
+        <mat-nav-list style="display: flex;justify-content: space-between;">
+            <a mat-list-item href="#">Home</a>
+            <a mat-list-item href="#">About</a>
+            <a mat-list-item href="#">Contact</a>
+
+            <a mat-list-item [matMenuTriggerFor]="account">Account</a>
+            <mat-menu #account="matMenu">
+                <button mat-menu-item><a [routerLink]="['/signing']">Login</a></button>
+                <button mat-menu-item><a href="#">Signup</a></button>
+            </mat-menu>
+
+            <a mat-list-item href="#">Arabic</a>
+        </mat-nav-list>
+    </div>
+</mat-toolbar>
