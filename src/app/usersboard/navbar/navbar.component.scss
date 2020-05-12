@@ -1,0 +1,61 @@
+$background-color: #e7ebed;
+$color: #35465a;
+$green-color: #64C36D;
+.navbar{
+    background-color: $background-color;
+    color: $color;
+    box-shadow: #555 0px -1px 11px 7px;
+
+    & .row{
+        width: 100%;
+        margin: 20px 0;
+    
+        & .logo{
+            background-image: url('../../../assets/logo1.png');
+            display: block;
+            width: 240px;
+            height: 80px;
+            background-position: center;
+            background-size: cover;
+        }
+        & .col-md-9{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+
+            & .menu{
+                display: flex;
+
+                & a{
+                    margin: 0 20px;
+                    padding: 2px 5px;
+                    width: 10rem;
+                    border: 1px solid $green-color;
+                    border-radius: 20px;
+                    background: none;
+                    color: $color;
+                    font-size: 1.3rem;
+
+                    @media(max-width: 768px) {
+                        &{
+                            margin: 0
+                        }
+                    }
+                }
+                & a:hover{
+                    text-decoration: none;
+                    border-color: $color;
+                }
+                & a:focus, a:active{
+                    outline: none;
+                    color: $green-color;
+                }
+            }
+
+        }
+    
+    }
+}
+
+

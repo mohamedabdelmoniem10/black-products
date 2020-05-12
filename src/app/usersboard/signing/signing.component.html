@@ -1,1 +1,79 @@
-<p>signing works!</p>
+<section class="signing">
+    <div class="container">
+        <div class="row" [ngStyle]="{'justify-content': signin ? 'flex-start' : 'flex-end'}">
+
+            <!-- this is the login -->
+            <div class="col-md-6 col-12" *ngIf="signin">
+                <form>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="please type your phone number">
+                            <mat-hint>just type your 11 digits of your phone number</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                          </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" mat-raised-button>Sign In</button>
+                    </div>
+                    or
+                    <div class="form-group" class="signin">
+                        <a mat-raised-button [routerLink]="['/signup']">sign up<mat-icon>arrow_forward</mat-icon></a>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- this is the signup -->
+            <div class="col-md-6 col-12" *ngIf="!signin">
+                <form>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Your Name</mat-label>
+                            <input matInput placeholder="please type your name">
+                            <mat-hint>type first and last name</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="please type your phone number">
+                            <mat-hint>just type your 11 digits of your phone number</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="type your email">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                          </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" mat-raised-button>Sign up</button>
+                    </div>
+                    or
+                    <div class="form-group" class="signin">
+                        <a mat-raised-button [routerLink]="['/signin']"><mat-icon>arrow_back</mat-icon>sign in</a>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</section>
