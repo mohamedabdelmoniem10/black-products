@@ -1,0 +1,241 @@
+section,
+header {
+  font-family: "coco" !important;
+}
+.heading {
+  text-align: center;
+  h1 {
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  .tag-line {
+    font-size: 1.4rem;
+    font-weight: bolder;
+  }
+}
+
+.header {
+  background-color: #0b1725;
+  color: #fff;
+  padding: 4rem;
+  height: 90vh;
+
+  @media (max-width: 1200px) {
+    height: 110vh;
+  }
+
+  .heading {
+    color: #fff;
+    text-align: left;
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      letter-spacing: 2.6px;
+    }
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 4rem;
+      letter-spacing: 2px;
+    }
+    .enroll {
+      color: #333;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 0.6rem 1.7rem;
+      border: 1px solid transparent;
+      font-weight: bolder;
+    }
+    .enroll:hover {
+      color: #fff;
+      background-color: transparent;
+      border: 1px solid #fff;
+      text-decoration: none;
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+  }
+}
+
+.third-section {
+  background-color: #d2e4ec;
+  color: #333;
+  padding: 4rem;
+
+  .heading {
+    color: #333;
+  }
+  .boxs {
+    margin-top: 5rem;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      padding: 1rem;
+      margin: 0.5rem;
+
+      .icon {
+        margin-bottom: 1rem;
+        img {
+          width: 30%;
+          height: auto;
+        }
+      }
+      .box-title {
+        font-weight: bolder;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.forth-section {
+  background-color: #333;
+  color: #fff;
+  padding: 4rem;
+
+  .heading {
+    color: #fff;
+
+    .tag-line {
+      color: #f1f4f5;
+    }
+  }
+  .steps {
+    margin-top: 3rem;
+
+    .single-step {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid #f1f4f5;
+      border-top: 0.8rem solid #55b7ab;
+      padding: 2rem;
+      margin: 0.5rem;
+      border-radius: 10px;
+      position: relative;
+
+      .no {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        background: #55b7ab;
+        padding: 5px 13px;
+        border-radius: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}
+
+.testmonials {
+  background-color: #f1f4f5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 6%;
+
+  & .heading {
+    & h1 {
+      margin-bottom: 2rem;
+
+      & mat-icon {
+        color: #21958c;
+        font-size: 4rem;
+        margin-right: 3rem;
+        transform: rotate(-25deg);
+      }
+    }
+  }
+  & .reviews {
+    align-items: center;
+
+    & .review {
+      border: 1px solid #21958c;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1rem;
+
+      & .personal-info {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.4rem;
+
+        & .personal-name {
+          text-align: left;
+
+          h4 {
+            display: inline-block;
+            margin: 0;
+          }
+        }
+
+        & .avatar {
+          & img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            margin-right: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.start-now {
+  background-color: #21958c;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 6%;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    background-image: url("../../../assets/prefooter.png");
+    background-repeat: repeat;
+    height: 100%;
+    background-size: 40rem;
+    opacity: 0.15;
+  }
+
+  & .heading {
+    margin-bottom: 2rem;
+    color: #fff;
+
+    & h2 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+    }
+    & .tag-line {
+      font-size: 1.6rem;
+    }
+  }
+  & button {
+    padding: 3px 35px;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    outline: none;
+
+    &:active {
+      outline: none;
+    }
+  }
+}

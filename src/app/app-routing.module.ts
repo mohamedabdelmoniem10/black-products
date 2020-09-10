@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersboardComponent } from './usersboard/usersboard.component';
 import { SigningComponent } from './usersboard/signing/signing.component';
 import { HomeComponent } from './usersboard/home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,11 @@ const routes: Routes = [
       },
       
     ]
-  }
+  },{
+  path: 'dashboard',
+  component: DashboardComponent,
+  children: []
+}
 ];
 
 @NgModule({

@@ -1,62 +1,60 @@
-$text-color: #9cabbd;
+$text-color: #fff;
 $hover-color: #ff7c4f;
-$background-color: #35465B;
-$background-color-copy-rights: rgb(44, 59, 77);
+$background-color: #0b1725;
+$background-color-copy-rights: #122841;
 
+footer {
+  background-color: $background-color;
+  color: $text-color;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.7rem;
 
-footer{
-    background-color: $background-color;
-    color: $text-color;
-    font-size: 1rem;
+  & .footer-content {
+    padding-bottom: 20px;
+
+    & .stock {
+      padding-right: 30px;
+
+      & .logo {
+        padding-top: 26px;
+        // margin-left: -50px;
+
+        & span {
+          background-image: url("../../../assets/taager-logo.svg");
+          display: block;
+          width: 240px;
+          height: 80px;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          filter: brightness(30);
+        }
+      }
+    }
+
+    & .contacts {
+      margin: 19%;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+
+      & .mail {
+        & a {
+          color: $text-color;
+        }
+        & a:hover {
+          text-decoration: none;
+          color: $hover-color;
+        }
+      }
+    }
+  }
+
+  & .copy-rights {
+    text-align: center;
+    padding: 20px;
     letter-spacing: 1px;
-    line-height: 1.7rem;
-
-    & .footer-content{
-        padding-bottom: 20px;
-        
-        & .stock{
-            padding-right: 30px;
-
-            & .logo{
-                padding-top: 26px;
-                margin-left: -50px;
-
-                & span{
-                    background-image: url('../../../assets/logo1.png');
-                    display: block;
-                    width: 240px;
-                    height: 80px;
-                    background-position: center;
-                    background-size: cover;
-                }
-            }
-        }
-
-        & .contacts{
-            margin: 19%;
-            font-size: 1.4rem;
-            line-height: 1.8rem;
-
-            & .mail{
-                & a{
-                    color: $text-color;
-                }
-                & a:hover{
-                    text-decoration: none;
-                    color: $hover-color;
-                }
-            }
-        }
-    }
-
-    & .copy-rights{
-        text-align: center;
-        padding: 20px;
-        letter-spacing: 1px;
-        background-color: $background-color-copy-rights;
-        color: $text-color;
-    }
+    background-color: $background-color-copy-rights;
+    color: $text-color;
+  }
 }
-
-
-
