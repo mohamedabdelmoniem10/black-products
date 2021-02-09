@@ -1,0 +1,66 @@
+<nav class="navigation">
+    <div class="bar first-bar">
+      <div class="logo">
+        <img src="../../assets/logo.png" alt="logo" title="logo" />
+      </div>
+      <div class="search">
+        <!-- <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="إبحث عن المنتجات المفضلة"
+            aria-label="Search"
+          />
+          <button type="submit">
+            <fa name="search"></fa>
+          </button>
+        </form> -->
+      </div>
+      <div class="cart-account">
+        <a href="#" class="btn">
+          <div class="account">
+            <fa name="user"></fa>
+            <div class="text">حسابي</div>
+          </div>
+        </a>
+        <a href="#" class="btn">
+          <div class="cart">
+            <fa name="shopping-cart"></fa>
+            <div class="text">
+              العربة
+            </div>
+            <div class="cart-counter">0</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="bar second-bar">
+      <div class="categories">
+        <div class="categories__bar">
+          <!-- <fa name="bars"></fa> -->
+          <div class="text">التصنيفات</div>
+        </div>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a class="menu-btn-active menu-btn">كل المنتجات </a></li>
+          <!-- <li><a class="menu-btn">عن الموقع</a></li> -->
+           <!-- make for loop on categories -->
+           <li *ngFor="let category of categories"><a class="menu-btn" routerLinkActive="menu-btn-active" [routerLink]="['/product-category', category.slug]">{{category.name}}</a></li>
+        </ul>
+      </div>
+      <div class="mobile">
+        <fa name="bars" *ngIf="!open" (click)="open = !open"></fa>
+        <fa name="angle-down" *ngIf="open" (click)="open = !open"></fa>
+        <div class="mobile__menu" *ngIf="open">
+          <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">عن الموقع</a></li>
+            <li><a href="#">اتصل بنا </a></li>
+            <li><a href="#">المساعدة</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

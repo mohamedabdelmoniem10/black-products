@@ -1,0 +1,10 @@
+<div class="product-img">
+    <img [src]="imgArr[clicked].src" alt="">
+    <fa name="chevron-right" (click)="next()"></fa>
+    <fa name="chevron-left" (click)="prev()"></fa>
+    <!-- <i class="fas fa-next" (click)="clicked+1"></i>
+    <i class="fas fa-prev" (click)="clicked-1"></i> -->
+</div>
+<div class="imgs">
+    <img *ngFor="let img of imgArr; let i = index" src="{{img.src}}" [ngClass]="{'notBlurImg': i === clicked}" (click)="imgClicked(img, i)" alt="image">
+</div>

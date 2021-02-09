@@ -1,0 +1,84 @@
+        <form class="needs-validation" [formGroup]="orderForm" novalidate="">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="name">الاسم</label>
+                  <input type="text" class="form-control" id="name" formControlName="name" placeholder="من فضلك ادخل اسمك بالكامل">
+                  <span class="text-danger"
+                  *ngIf="orderFormControl.name.touched && orderFormControl.name.errors?.required"
+                  >
+                    من فضلك ادخل الاسم.
+                  </span>
+                </div>
+              
+  
+                <div class="mb-3">
+                  <label for="phone">الموبايل </label>
+                  <input type="tel" class="form-control" id="phone" formControlName="phone">
+                  <span class="text-danger"
+                  *ngIf="orderFormControl.phone.touched && orderFormControl.phone.errors?.required"
+                  >
+                    من فضلك ادخل رقم الهاتف.
+                  </span>
+                </div>
+    
+                <div class="mb-3">
+                  <label for="city">المدينة/المحافظة</label>
+                  <select class="form-control" formControlName="city">
+                    <option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+                  </select>
+                  <span class="text-danger"
+                  *ngIf="orderFormControl.city.touched && orderFormControl.city.errors?.required"
+                  >
+                    من فضلك اختر مدينتك.
+                  </span>
+                </div>
+    
+                <div class="mb-3">
+                  <label for="address">العنوان</label>
+                  <input type="text" class="form-control" id="address" formControlName="address" placeholder="برجاء كتابة العنوان بصورة واضحة" required="">
+                  <span class="text-danger"
+                  *ngIf="orderFormControl.address.touched && orderFormControl.address.errors?.required"
+                  >
+                  من فضلك ادخل العنوان
+                </span>
+                </div>
+                <!-- <div class="d-none" formArrayName="line_items">
+                  <input type="text" formControlName="product_id" value="{{product.id}}">
+                </div> -->
+
+
+                <hr>
+                <div class="mb-3">
+                  <label for="order_comments">ملاحظات الطلب</label>
+                  <textarea class="form-control" id="order_comments" formControlName="order_comments" placeholder="ملاحظات حول الطلب، مثال: ملحوظة خاصة بتسليم الطلب."></textarea>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3 class="heading">طلبك</h3>
+                
+                <table class="table">
+                  <tr>
+                    <th>المنتج</th>
+                    <th>الإجمالي</th>
+                  </tr>
+                  <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}جنيه</td>
+                  </tr>
+                  <tr>
+                    <td>الشحن</td>
+                    <td>{{shipping}}جنيه</td>
+                  </tr>
+                  <tr>
+                    <th>الإجمالي</th>
+                    <td>{{convertToInt(product.price) + convertToInt(shipping)}}جنيه</td>
+                  </tr>
+                </table>
+                
+                <hr class="mb-4">
+                <button class="btn btn-success btn-lg btn-block buy-btn" (click)="submitOrder()">تأكيد الطلب</button>
+                {{ orderForm.value | json}}
+              </div>
+            </div>
+          </form>

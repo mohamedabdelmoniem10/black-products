@@ -1,0 +1,37 @@
+// 600px to em == 600/16 = 37.5em
+// 900px to em == 900/16 = 56.25em
+// 1200px to em == 1200/16 = 75em
+// 1320px to em == 1320/16 = 82.5em
+// 1800px to em == 1800/16 = 112.5em
+
+@mixin responsive($portal) {
+  @if $portal == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $portal == tab_port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $portal == tab_land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $portal == small_screen {
+    @media (max-width: 82.5em) {
+      @content;
+    }
+  }
+  @if $portal == big_screen {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $portal) {
+      @content;
+    }
+  }
+}

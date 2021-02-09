@@ -1,0 +1,39 @@
+<div class="single-product product row">
+    <div class="product__slider col-12 col-md-6">
+        <h2 class="product__title">
+            {{product.name}}
+        </h2>
+        <div class="product__watching-now">
+            يشاهده الان {{ product.number-of-watching }}
+        </div>
+        <div class="product__discount">
+            <!-- here will be a discount number like >> -20% -->
+        </div>
+        <app-product-slider [imgArr]="product.images"></app-product-slider>
+    </div>
+    <div class="product__details col-12 col-md-6">
+        <!-- <h2 class="product__title">
+            {{product.name}}
+        </h2> -->
+        <div class="product__availble">
+            <fa name="check-circle"></fa>{{ product.instock.number }} متوفر
+        </div>
+        <div class="product__prices">
+            <div class="product__prices-regular" *ngIf="product.on_sale">{{product.price}}جنيه</div>
+            <div class="product__prices-sale">{{product.sale_price}}جنيه</div>
+            <!-- here should be a countdown timer of random number of time  -->
+        </div>
+        <div class="product__description">
+            <h3 class="product__description--title">وصف المنتج</h3>
+            <p class="product__description--content">
+                {{product.description}}
+            </p>
+        </div>
+        <button class="product__buy-btn" [routerLink]="['/checkout', product.slug]">اشتري الأن</button>
+    </div>
+</div>
+
+
+<a href="#" class="messenger__btn">
+    <i class="fab fa-messenger"></i>
+</a>

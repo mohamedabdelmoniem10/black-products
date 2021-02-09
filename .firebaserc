@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "black-products": {
+      "hosting": {
+        "ecommerce": [
+          "black-products"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "black-products"
+  }
+}

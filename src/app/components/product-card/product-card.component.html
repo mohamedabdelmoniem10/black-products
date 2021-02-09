@@ -1,0 +1,20 @@
+<div class="product-card">
+    <div class="product-card__img">
+        <div class="product-card__img-off">-20%</div>
+        <a class="product-card__link" [routerLink]="['/product', product.slug]">
+            <img [src]="product.images[0].src" alt="product image" title="المنتج">
+        </a>
+    </div>
+    <div class="product-card__detailes">
+        <a class="product-card__detailes--title" [routerLink]="['/product', product.slug]">
+            {{product.name}}
+        </a>
+        <div class="product-card__detailes--prices">
+            <div class="product-card__detailes--prices-regular" *ngIf="product.on_sale">{{product.regular_price}}جنيه</div>
+            <div class="product-card__detailes--prices-sale">{{product.price}}جنيه</div>
+        </div>
+        <button class="product-card__buy-btn" [routerLink]="['/checkout', product.slug]">
+            اشتري الأن
+        </button>
+    </div>
+</div>
